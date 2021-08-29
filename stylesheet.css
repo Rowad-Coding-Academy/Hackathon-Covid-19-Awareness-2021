@@ -1,0 +1,244 @@
+body {
+margin: 0;
+padding: 0;
+background:rgb(7,87,91);
+}
+
+/*fonts*/
+
+@font-face {
+font-family: thinJumper;
+src: url(font/JumperPERSONALUSEONLY-Thin.ttf);
+}
+
+@font-face {
+font-family: boldJumper;
+src: url(font/JumperPERSONALUSEONLY-Bold.ttf);}
+
+* {
+    font-family: Bahnschrift ;
+}
+
+/**/
+
+/*blue*/
+#beSafe {
+display: block;
+position: absolute;
+right: -100px;
+}
+
+#stayHome {
+display: inline-block;
+position: absolute;
+top: 200px;
+left: 550px;
+z-index: 0;
+}
+.iframeBorder {
+position: relative;
+}
+/*color codes
+    
+        (0,59,70)
+        (7,87,91) 
+        (102,165,173) 
+        (196,223,230) 
+    */
+.blue {
+position: relative;
+top: 0;
+width: 100%;
+height: 30em;
+margin: 0%;
+padding: 0%;
+z-index: -10;
+}
+/**/
+
+/*safety*/
+.safety {
+display: flex;
+justify-content: center;
+position: absolute;
+flex-wrap: wrap;
+background-color: blueviolet;
+justify-content: flex-start;
+width: 100%;
+height: 46em;
+}
+
+/*Merger*/
+.blue{
+    background:linear-gradient(to bottom, rgb(7,87,91), rgb(196,223,230));
+}
+.safety{ background:linear-gradient(to top, rgb(7,87,91), rgb(196,223,230));}
+
+
+/*Content*/
+.firstCont{
+    position: absolute;
+    width: 40%;
+    height: 15em;
+    right: 128px;
+    text-align: justify;
+    bottom: 72px;
+    text-justify: inter-word;
+    font-size: 22px;
+}
+/**/
+
+
+
+
+/*prevention*/
+
+.prevention{
+    display: block;
+    width:90%;
+    text-align:justify;
+    align-self: center;
+    margin:5%;
+    font-size: 22px;
+
+}
+
+
+
+
+/*nav bar*/
+
+
+
+
+header {
+    width: 90%;
+    border-radius: 1em;
+    height: 80px;
+    position: fixed;
+    top:0;
+    margin: 10px 5%;
+    box-sizing: border-box;
+    box-shadow: 0 2px 8px rgb(0 0 0 / 30%);
+    z-index: 100;
+}
+
+.logo {
+position: absolute;
+font-family: thinJumper;
+height: 150px;
+padding-bottom: 55px;
+padding-left: 10px;
+text-align: center;
+box-sizing: border-box;
+float: left;
+}
+
+nav {
+float: right;
+}
+
+.clearfix {
+clear: both;
+}
+
+nav ul {
+margin: 0;
+padding: 0;
+display: flex;
+}
+
+nav ul li#liHeader {
+list-style: none;
+}
+
+nav ul li#liHeader a {
+font-family: thinJumper;
+display: block;
+font-weight: bold;
+font-size: 25px;
+margin-top: 15px;
+padding: 14px 16px;
+margin-left: 20px;
+text-decoration: none;
+color: white;
+}
+
+nav ul li#liHeader a:hover {
+border-radius: 10px;
+padding: 14px 16px;
+background: rgb(196,223,230);
+color:black; 
+opacity: 1;
+transition: 0.5s;
+}
+
+
+/**/
+
+/* fb insta tweet tweet*/
+
+.alignIcons {
+box-sizing: border-box;
+display: flex;
+justify-content: left;
+align-items: left;
+background-color: darkslategrey;
+}
+
+ul {
+box-sizing: border-box;
+position: relative;
+display: flex;
+margin: 5px;
+font-size: 10px;
+padding: 0;
+}
+
+ul li#liFooter {
+box-sizing: border-box;
+position: relative;
+list-style: none;
+margin: 0 20px;
+cursor: pointer;
+}
+
+ul li#liFooter a {
+box-sizing: border-box;
+text-decoration: none;
+}
+
+ul li#liFooter a i {
+font-size: 2.5em;
+color: grey;
+}
+
+ul li#liFooter::before {
+font-family: fontAwesome;
+position: absolute;
+top: 0;
+left: 0;
+font-size: 2.5em;
+height: 0;
+overflow: hidden;
+transition: 0.5s ease-in-out;
+}
+
+ul li#liFooter:nth-child(1)::before {
+margin-top: -1.8px;
+font-family: "Font Awesome 5 Brands";
+font-size: 2.5em;
+font-weight: 900;
+content: "\f39e";
+color: blue;
+border-bottom: 4px solid blue;
+width: 25px;
+pointer-events: none;
+}
+
+ul li#liFooter:hover::before {
+height: 100%;
+}
+/**/
+
+/*footer*/

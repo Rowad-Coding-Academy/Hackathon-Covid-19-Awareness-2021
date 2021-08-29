@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!--color codes
+    
+        (0,59,70)
+        (7,87,91) 
+        (102,165,173) 
+        (196,223,230) 
+    -->
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CovidAwareness</title>
+    <link rel="stylesheet" href="stylesheet.css">
+    
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+    <script src="javascript.js" defer></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
+*
+{
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+}
+
+
+
+body
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background:linear-gradient(to bottom, rgb(7,87,91), rgb(196,223,230));
+}
+.containerr
+{
+    float: left;
+    margin: 1%;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    width: 1200px;
+    width: calc(94%/3);
+    transform-style: preserve-3d;
+}
+.containerr .box
+{
+position: relative;
+width: 300px;
+height: 400px;
+margin: 40px;
+background: #232323;
+border-radius: 20px;
+transform-style: preserve-3d;
+}
+
+.containerr .box::before
+{
+content: 'COVID';
+position: absolute;
+top: 20px;
+left: 20px;
+font-size: 6em;
+font-weight: 900;
+color: #fff;
+font-style: italic;
+opacity: 0;
+transition: 0.5s;
+}
+.containerr .box::before
+{
+content: 'COVID';
+position: absolute;
+bottom: 20px;
+right: 20px;
+font-size: 5em;
+font-weight: 900;
+color: #fff;
+font-style: italic;
+opacity: 0;
+transition: 0.5s;
+}
+.containerr .box::before,
+.containerr .box::after
+{
+    opacity: 0.04;
+}
+.containerr .box .name
+{
+position: absolute;
+top: 0;
+left: 0;
+text-align: center;
+color: rgb(255, 115, 0);
+width: 100%;
+transform-style: preserve-3d;
+transform: translate3d(0,0,75px);
+transition: 0.5s;
+opacity: 0;
+z-index: 10;
+}
+.containerr .box:hover .name
+{
+top: 40px;
+opacity: 1;
+}
+.containerr .box .readmore{
+position: absolute;
+bottom: 0;
+left: 150px;
+transform-style: preserve-3d;
+transform: translate3d(-50%,0,75px);
+color: rgb(0, 255, 221);
+background: #333;
+padding: 10px 25px;
+border-radius: 30px;
+text-decoration: none;
+transition: 0.5s;
+opacity: 0;
+z-index: 10;
+}
+.containerr .box:hover .readmore
+{
+bottom: 30px;
+opacity: 1;
+}
+.containerr .box .circle
+{
+position: absolute;
+top: 50%;
+left: 50%;
+width: 200px;
+height: 200px;
+border-radius: 50%;
+transition: 0.5s;
+background: rgb(255, 255, 255);
+transform-style: preserve-3d;
+z-index: 10;
+transform: translate3d(-50%,-50%,50px);
+}
+.containerr .box .product
+{
+position: absolute;
+top: 50%;
+left: 50%;
+max-width: 300px;
+transition: 0.5s;
+z-index: 11;
+transition: 0.5s;
+transform-style: preserve-3d;
+transform: translate3d(-50%,-50%,0px) rotate(-15deg);
+
+
+}
+
+
+
+.containerr .box:nth-child(1) .circle
+.containerr .box:nth-child(1) .readmore{
+    background: #379bf7;
+
+}
+.containerr .box:nth-child(2) .circle
+.containerr .box:nth-child(2) .readmore{
+    background: #379bf7;
+}
+.containerr .box:nth-child(3) .circle
+.containerr .box:nth-child(3) .readmore{
+    background: #379bf7;
+}
+
+
+
+    </style>
+    <style>
+        html {
+    scroll-behavior: smooth;
+}
+        body{
+            display:flex;
+            flex-direction: column;
+
+            justify-content: center;
+            align-items: center;
+            min-height:100vh;
+            
+        }
+        .accordion{
+            width: 800px;
+        }
+        .accordion .contentBx{
+            position:relative;
+            margin:10px 20px;
+        }
+        .accordion .contentBx .label{
+            position:relative;
+            padding:10px;
+            background:darkcyan;
+            color:white;
+            cursor:pointer;
+        }
+        .accordion .contentBx .label::before{
+            content:'+';
+            position:absolute;
+            top:50%;
+            right: 20px;
+            transform: translateY(-50%);
+            font-size:1.5em;
+        }
+        .accordion .contentBx.active .label::before{
+            content:'-';
+        }
+        .accordion .contentBx .content{
+            position:relative;
+            background:#fff;
+            height:0;
+            overflow:hidden;
+            transition:0.5s;
+            overflow-y:auto;
+        }
+        .accordion .contentBx.active .content{
+            height: 150px;
+            padding: 10px;
+        }
+    </style>
+   
+</script>
+</head>
+<body>
+
+<!--nav bar-->
+<header id="header">
+    <img src="img/30343349.jpg.png" alt="logo" class="logo">
+    <div class="menu-toggle"></div>
+    <nav>
+        <ul>
+            <li id="liHeader"><a href="#">Home</a></li>
+            <li id="liHeader"><a href="#">Prevention</a></li>
+            <li id="liHeader"><a href="file:///Z:/covidproject/aboutUs.html" style="margin-right:10px;">About Us</a></li>
+        </ul>
+    </nav>
+    <div class="clearfix"></div>
+</header>
+
+
+<!--
+<div class="blue">
+    <center>
+        <div style="display:flex; align-content:center; position: relative;">
+            <div><img id="beSafe" src="img/Artboard1.png"></div>
+            <div><img id="stayHome" src="img/Stayhome.png"></div>
+        </div>
+        
+    </center>
+</div>
+-->
+
+<div class='safety' style="display: block; margin-top: 15em;" >
+<iframe src="https://ourworldindata.org/grapher/total-cases-covid-19?tab=map" width="autopx" height="autopx" style="border:none; width:50%; height:70%;z-index:20; position: relative;"></iframe>
+<iframe class="iframeBorder" style="z-index: 20;position: absolute;border: none;top: 0;width: 49%;height: 40%;margin: 3px;" width="auto" height="100%" 
+src="https://www.youtube.com/embed/watch?v=i0ZabxXmH4Y"></iframe>
+<p class="firstCont"> Coronavirus disease 2019 (COVID-19) is a contagious disease caused by 
+    severe acute respiratory syndrome coronavirus 2 (SARS-CoV-2). The first known case was identified in Wuhan, China,    
+    in December 2019. The disease has since spread worldwide, leading to an ongoing pandemic.</p>
+    <p class="prevention">
+        Preventive measures to reduce the chances of infection include getting vaccinated, staying at home, wearing a mask in public, avoiding crowded places, keeping distance from others, ventilating indoor spaces, managing potential exposure durations, washing hands with soap and water often and for at least twenty seconds, practising good respiratory hygiene, and avoiding touching the eyes, nose, or mouth with unwashed hands.
+    </p>
+    <div class="accordion">
+        <div class="contentBx">
+            <div class="label">What's COVID-19</div>
+            <div class="content">
+                <p>
+                    Coronavirus disease 2019 (COVID-19) is a contagious disease caused by 
+                    severe acute respiratory syndrome coronavirus 2 (SARS-CoV-2).
+                </p>
+            </div>
+        </div>
+    </div>
+    <div class="accordion">
+        <div class="contentBx">
+            <div class="label">How to Avoid Covid-19?</div>
+            <div class="content">
+                <p>
+                    Preventive measures to reduce the chances of infection include getting vaccinated, staying at home, wearing a mask in public, avoiding crowded places, keeping distance from others, ventilating indoor spaces, managing potential exposure durations, washing hands with soap and water often and for at least twenty seconds, practising good respiratory hygiene, and avoiding touching the eyes, nose, or mouth with unwashed hands.
+  
+                </p>
+            </div>
+        </div>
+    </div>
+    <div class="accordion">
+        <div class="contentBx">
+            <div class="label">Where is the First Covid-19 case?</div>
+            <div class="content">
+                <p>
+                    The first known case was identified in Wuhan, China,    
+                    in December 2019. The disease has since spread worldwide, leading to an ongoing pandemic.
+                </p>
+            </div>
+        </div>
+    </div>
+    <div class="containerr">
+    <div class="box">
+        <h2  class="name">Covid-19</h2>
+        <a target="_blank" href="https://www.who.int/emergencies/diseases/novel-coronavirus-2019?gclid=CjwKCAjwjdOIBhA_EiwAHz8xmyXlcHLc2EJVeRvPxbHej39fScf1R2ps8n_p4Lymm5dH3QOCEFeo9BoCuV4QAvD_BwE" class="readmore">Read More</a>
+        <img src="img/Layer 3.png" class="product">
+    </div>
+</div> <div class="containerr">
+    <div class="box">
+        <h2 class="name">Mask</h2>
+        <a target="_blank" href="https://www.who.int/emergencies/diseases/novel-coronavirus-2019/advice-for-public/when-and-how-to-use-masks" class="readmore">Read More</a>
+
+        <img src="img/Layer 4.png" class="product">
+    </div>
+</div> <div class="containerr">
+    <div class="box">
+        <h2 class="name">Sterilizer</h2>
+        <a target="_blank" href="https://www.who.int/news-room/q-a-detail/coronavirus-disease-(covid-19)-vaccines?topicsurvey=v8kj13)&gclid=CjwKCAjwjdOIBhA_EiwAHz8xm8_wRriVYr0HRlThh2Isye1O2OxLwq-6ckqDEwDLpmBSUWzK5yAAHxoCmGEQAvD_BwE" class="readmore">Read More</a>
+        
+        <img src="img/Layer 4.png" class="product">
+    </div>
+
+    
+    
+</div>
+
+
+
+
+<script src="coved/vanilla-tilt.min.js"></script>
+<script>
+    VanillaTilt.init(document.querySelectorAll(".box"), {
+        max: 25,
+    speed: 400
+});
+
+    const accordion = document.getElementsByClassName('contentBx');
+
+    for (i=0; i<accordion.length; i++){
+        accordion[i].addEventListener('click',function(){
+            this.classList.toggle('active')})
+        }
+</script>
+</div>
+
+
+
+
+
+</body>
+</html>

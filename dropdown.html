@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+    <style>
+
+
+
+
+.alignIcons{
+    box-sizing: border-box;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    background-color:darkslategrey;
+}
+
+ul{
+    box-sizing: border-box;
+    position:relative;
+    display:flex;
+}
+
+ul li#liFooter{
+    box-sizing: border-box;
+    position:relative;
+    list-style: none;
+    margin: 0 20px;
+    cursor:pointer;
+}
+
+ul li a{
+    box-sizing: border-box;
+    text-decoration:none;
+}
+
+ul li a i {
+    font-size:6em;
+    color:grey;
+}
+
+ul li#liFooter::before{
+    font-family:fontAwesome;
+    position:absolute;
+    top:0;
+    left:0;
+    font-size:6em;
+    height:0;
+    overflow:hidden;
+    transition:0.5s ease-in-out;
+}
+
+
+ul li#liFooter:nth-child(1)::before{
+    margin-top: -4.3px;
+    font-family: "Font Awesome 5 Brands";
+    font-weight: 400;
+    content:'\f39e';
+    color:rgb(187, 255, 0);
+    border-bottom: 4px solid blue;
+}
+
+ul li#liFooter:hover::before{
+    height:100%;
+}
+    </style>
+
+</head>
+<body>
+<div class="alignIcons">
+    <ul>
+        <li id="liFooter"><a href="#"><i class="fab fa-facebook-f"></i></a></li>
+        <li id="liFooter"><a href="#"><i class="fab fa-twitter"></i></a></li>
+        <li id="liFooter"><a href="#"><i class="fab fa-whatsapp"></i></a></li>
+    </ul>
+</div>
+</body>
+</html>
